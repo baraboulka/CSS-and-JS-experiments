@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+/* Slider Wrapper */
+.slider-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Indicators */
+.slider-indicators {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  bottom: 0;
+}
+
+.slider-indicators label {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 100%;
+  margin: 0.5rem;
+  transition: all ease 0.4s;
+  display: inline-block;
+}
+
+.slider-indicators label:hover {
+  background-color: #36664a;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  background-size: cover;
+  background-position: center;
+  transition: left 0s 0.6s;
+}
+
+[id^="indicator"]:checked + .slide {
+  left: 0;
+  z-index: 20;
+  transition: left 0.5s ease-out;
+}
+
+/* Images */
+.slide-1 {
+  background-image: url(img/introduction_card1.jpg);
+}
+.slide-2 {
+  background-image: url(img/introduction_card2.jpg);
+}
+.slide-3 {
+  background-image: url(img/introduction_card3.jpg);
+}
