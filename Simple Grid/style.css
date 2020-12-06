@@ -43,9 +43,9 @@ p {
   min-height: 100vh;
 }
 
-main,
-header,
-footer,
+.main,
+.header,
+.footer,
 .author {
   padding: 1rem;
 }
@@ -174,9 +174,9 @@ footer,
     height: 100vh;
   }
 
-  main,
-  header,
-  footer,
+  .main,
+  .header,
+  .footer,
   .author {
     padding: 2rem;
     text-align: left;
