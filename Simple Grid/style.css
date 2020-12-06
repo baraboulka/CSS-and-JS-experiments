@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Caveat", cursive;
+  background-color: #ffeeda;
+  font-size: 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.grid-starter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px calc(100vh - 100px) 3fr 1fr 1fr 50px;
+  grid-template-areas:
+    "header"
+    "author"
+    "main"
+    "nom"
+    "yam"
+    "footer";
+  min-height: 100vh;
+}
+
+.grid-starter > * {
+  padding: 1rem;
+}
+
+.main {
+  grid-area: main;
+  background-color: #d3b4b7;
+  display: flex;
+  flex-direction: column;
+}
+
+.main h1 {
+  font-size: 3rem;
+}
+
+.main h1 span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+.nom,
+.yam,
+.author {
+  background-position: top center;
+  background-size: cover;
+}
+
+.nom {
+  grid-area: nom;
+  background-color: #89799e;
+  background-image: url(img/gear.jpg);
+}
+
+.yam {
+  grid-area: yam;
+  background-color: #ffeeda;
+  background-image: url(img/cyclists.jpg);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #b09983;
+}
+
+.header {
+  grid-area: header;
+  background-color: #fcd6c5;
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.author {
+  grid-area: author;
+  background-image: url(img/jane.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.author h2 {
+  font-size: 2.5rem;
+}
+
+.author a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #89799e;
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s;
+  box-shadow: 0 1px 4px 1px #45345c;
+}
+
+.author a:hover {
+  transform: translateY(-2px);
+}
+
+.author a:active {
+  transform: translateX(-1px) translateY(5px);
+}
+
+@media all and (min-width: 1025px) {
+  .grid-starter {
+    grid-template-columns: 1.1fr 1.1fr 1.5fr;
+    grid-template-rows: 0.8fr 5fr 3fr 0.8fr;
+    grid-template-areas:
+      "main main header"
+      "main main author"
+      "nom yam author"
+      "footer footer author";
+    min-height: 100vh;
+  }
+
+  .grid-starter > * {
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .author {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: left;
+  }
+}
+
+.grid-gallery {
+  display: grid;
+  min-height: 100vh;
+}
