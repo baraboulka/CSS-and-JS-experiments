@@ -43,7 +43,10 @@ p {
   min-height: 100vh;
 }
 
-.grid-starter > * {
+main,
+header,
+footer,
+.author {
   padding: 1rem;
 }
 
@@ -75,13 +78,39 @@ p {
 .nom {
   grid-area: nom;
   background-color: #89799e;
-  background-image: url(img/gear.jpg);
 }
 
 .yam {
   grid-area: yam;
   background-color: #ffeeda;
-  background-image: url(img/cyclists.jpg);
+}
+
+.clipped {
+  position: relative;
+  object-fit: cover;
+  background-color: black;
+}
+
+.clipped img {
+  width: 100%;
+  height: 100%;
+}
+
+.clipped .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 20px solid #000;
+  border-image-source: url(img/film.svg);
+  border-image-repeat: repeat;
+  border-image-slice: 100;
+  border-image-width: 2;
+  border-image-outset: 0;
+  box-sizing: border-box;
+  object-fit: cover;
+  z-index: 100;
 }
 
 .footer {
@@ -142,10 +171,13 @@ p {
       "main main author"
       "nom yam author"
       "footer footer author";
-    min-height: 100vh;
+    height: 100vh;
   }
 
-  .grid-starter > * {
+  main,
+  header,
+  footer,
+  .author {
     padding: 2rem;
     text-align: left;
   }
