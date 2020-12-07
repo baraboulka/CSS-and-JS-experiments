@@ -2,8 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 :root {
-  --basic-size: 16px;
-  --increased-size: 40px;
+  --basic-size: 15px;
+  --medium-size: 25px;
+  --header-footer-basic: 70px;
+  --header-footer-medium: 100px;
 }
 
 html {
@@ -17,7 +19,7 @@ body {
   box-sizing: border-box;
   font-family: "Caveat", cursive;
   background-color: #ffeeda;
-  font-size: var(--increased-size);
+  font-size: var(--medium-size);
 }
 
 h1,
@@ -37,13 +39,15 @@ p {
 .grid-starter {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px minmax(800px, 90vh) auto 1fr 1fr 50px;
+  grid-template-rows: var(--header-footer-basic) minmax(700px, 90vh) auto 1fr 1fr var(
+      --header-footer-basic
+    );
   grid-template-areas:
     "header"
     "author"
     "main"
-    "nom"
-    "yam"
+    "cycle-1"
+    "cycle-2"
     "footer";
   min-height: 100vh;
 }
@@ -69,35 +73,33 @@ p {
   letter-spacing: 3px;
 }
 
-.nom,
-.yam,
 .author {
   background-position: top center;
   background-size: cover;
 }
 
-.nom {
-  grid-area: nom;
+.cycle-1 {
+  grid-area: cycle-1;
   background-color: #89799e;
 }
 
-.yam {
-  grid-area: yam;
+.cycle-2 {
+  grid-area: cycle-2;
   background-color: #ffeeda;
 }
 
-.clipped {
+.cycle {
   position: relative;
   object-fit: cover;
   background-color: black;
 }
 
-.clipped img {
+.cycle img {
   width: 100%;
   height: 100%;
 }
 
-.clipped .overlay {
+.cycle .overlay {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -159,16 +161,16 @@ p {
   transform: translateX(-1px) translateY(5px);
 }
 
-@media (min-width: 769px) and (orientation: landscape) {
+@media (min-width: 1023px) and (orientation: landscape) {
   .grid-starter {
     grid-template-columns: 1.1fr 1.1fr 1.5fr;
-    grid-template-rows: 0.8fr 4fr 3fr 0.8fr;
+    grid-template-rows: 0.8fr minmax(auto, 5fr) 2fr 0.8fr;
     grid-template-areas:
       "main main header"
       "main main author"
-      "nom yam author"
+      "cycle-1 cycle-2 author"
       "footer footer author";
-    min-height: 100vh;
+    height: 100vh;
   }
 
   .main,
@@ -192,14 +194,33 @@ p {
   h6 {
     text-align: left;
   }
+  body,
+  p {
+    font-size: var(--basic-size);
+  }
 }
 
-body,
-p {
-  font-size: var(--basic-size);
+@media (min-width: 768px) and (orientation: portrait) {
+  body,
+  p {
+    font-size: var(--medium-size);
+  }
+
+  .main,
+  .header,
+  .footer,
+  .author {
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .grid-starter {
+    grid-template-rows: var(--header-footer-medium) minmax(700px, 90vh) auto 1fr 1fr var(
+        --header-footer-medium
+      );
+  }
 }
 
 .grid-gallery {
   display: grid;
-  /* min-height: 100vh; */
 }
