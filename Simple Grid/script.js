@@ -1,6 +1,7 @@
+import { API_KEY } from "./api-key.js";
+
 const gridGallery = document.querySelector(".gallery");
-const API =
-  "https://pixabay.com/api/?key=11422427-322d8a06bc6234b4d902146f1&q=city+bicycle&image_type=photo";
+const API = `https://pixabay.com/api/?key=${API_KEY}&q=city+bicycle&image_type=photo`;
 
 const createImage = (photo) => {
   const imageBox = document.createElement("div");
