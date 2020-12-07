@@ -221,6 +221,25 @@ p {
   }
 }
 
-.grid-gallery {
-  display: grid;
+/* Grid Gallery CSS */
+
+.gallery {
+  column-count: 2;
+  column-gap: 0.5rem;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+@media (min-width: 1023px) and (orientation: landscape) {
+  .gallery {
+    column-count: 4;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .gallery {
+    column-count: 3;
+  }
 }
