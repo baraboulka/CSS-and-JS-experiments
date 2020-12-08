@@ -4,8 +4,6 @@
 :root {
   --basic-size: 15px;
   --medium-size: 25px;
-  --header-footer-basic: 70px;
-  --header-footer-medium: 100px;
 }
 
 html {
@@ -13,7 +11,7 @@ html {
 }
 
 body {
-  padding: 0;
+  padding: 0.5rem;
   margin: 0;
   height: 100vh;
   box-sizing: border-box;
@@ -36,12 +34,15 @@ p {
   font-size: 1rem;
 }
 
+img {
+  display: block;
+}
+
+/* Grid Starter CSS */
+
 .grid-starter {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: var(--header-footer-basic) minmax(700px, 90vh) auto 1fr 1fr var(
-      --header-footer-basic
-    );
   grid-template-areas:
     "header"
     "author"
@@ -50,6 +51,7 @@ p {
     "cycle-2"
     "footer";
   min-height: 100vh;
+  gap: 0.5rem;
 }
 
 .main,
@@ -76,6 +78,7 @@ p {
 .author {
   background-position: top center;
   background-size: cover;
+  min-height: 40rem;
 }
 
 .cycle-1 {
@@ -106,6 +109,7 @@ p {
   left: 0;
   top: 0;
   border: 20px solid #000;
+  border-radius: 0.5rem;
   border-image-source: url(img/film.svg);
   border-image-repeat: repeat;
   border-image-slice: 100;
@@ -164,13 +168,12 @@ p {
 @media (min-width: 1023px) and (orientation: landscape) {
   .grid-starter {
     grid-template-columns: 1.1fr 1.1fr 1.5fr;
-    grid-template-rows: 0.8fr minmax(auto, 5fr) 2fr 0.8fr;
     grid-template-areas:
       "main main header"
       "main main author"
       "cycle-1 cycle-2 author"
       "footer footer author";
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .main,
@@ -213,19 +216,18 @@ p {
     padding: 2rem;
     text-align: left;
   }
-
-  .grid-starter {
-    grid-template-rows: var(--header-footer-medium) minmax(700px, 90vh) auto 1fr 1fr var(
-        --header-footer-medium
-      );
-  }
 }
 
 /* Grid Gallery CSS */
 
 .gallery {
+  padding-top: 0.5rem;
   column-count: 2;
   column-gap: 0.5rem;
+}
+
+.image-container {
+  margin-bottom: 0.5rem;
 }
 
 .image-container img {
